@@ -13,7 +13,7 @@ b = tf.Variable(tf.constant([[2,3]]), name="b")
 # b = tf.constant([[2,3]])
 # print(a)
 # exit()
-result = a + b
+result = a + b # 2323
 # print(result)
 # print(tf.Session().run(result))
 sess = tf.InteractiveSession()
