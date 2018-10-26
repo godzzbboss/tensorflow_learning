@@ -22,9 +22,9 @@ a = tf.matmul(x, w1)
 y = tf.matmul(a, w2)  # 预测值
 
 # 定义损失函数与反向传播过程
-cross_entropy = -tf.reduce_mean(y_ * tf.log(tf.clip_by_value(y, 1e-10, 1)))
+cross_entropy = -tf.reduce_mean(y_ * tf.log(tf.clip_by_value(y, 1e-10, 1))) # 定义损失函数时，只需关注预测值跟真实值
 learning_rate = 0.001
-train_step = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cross_entropy)
+train_step = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cross_entropy) # 定义优化算法时，只需关注特征跟真实值，因为特征知道了，可以通过前向传播过程自动计算出预测值
 
 # 生成模拟数据集
 rdm = RandomState(1)
